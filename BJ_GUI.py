@@ -101,9 +101,9 @@ class Application(tk.Frame):
 
         frame2 = tk.Frame(master,bd=2,relief="ridge")
         frame2.pack(fill="x")
-        self.dealer_boad = tk.Canvas(frame2, width=900, height=310, bg='green')
+        self.dealer_boad = tk.Canvas(frame2, width=1030, height=310, bg='dark green')
         self.dealer_boad.pack(fill='both')
-        self.player_boad = tk.Canvas(frame2, width=1900, height=310, bg='blue')
+        self.player_boad = tk.Canvas(frame2, width=1030, height=310, bg='dark blue')
         self.player_boad.pack(fill='both')
 
         self.dealer_im = {}
@@ -206,19 +206,19 @@ class Application(tk.Frame):
         #self.dealer_im[0] = tk.PhotoImage(file=os.path.join(image_path, str(dealer_results[1])))
         #self.dealer_boad.create_image(5 ,5, anchor='nw', image = self.dealer_im[0])
 
-        messagebox.showinfo ("ディーラーより", "あなたの得点 ==>" + str(player["point"]) + '\n' + "ディーラーの得点 ==>" + str(dealer["point"]))
+        messagebox.showinfo ("ディーラーより", "あなたの得点 ： " + str(player["point"]) + '\n' + "ディーラーの得点 ： " + str(dealer["point"]))
         if(player_point > 21 and dealer_point > 21):
             messagebox.showinfo ("ディーラーより", '引き分けです')
         if(player_point > 21 and dealer_point <= 21):
-            messagebox.showinfo ("ディーラーより", 'あなたの負けです')
+            messagebox.showinfo ("ディーラーより", '残念でした！\nあなたの負けです')
         if(player_point <= 21 and dealer_point > 21):
-            messagebox.showinfo ("ディーラーより",'あなたの勝ちです')
+            messagebox.showinfo ("ディーラーより",'おめでとう！\nあなたの勝ちです')
         if(player_point <= 21 and dealer_point <= 21 and player_point > dealer_point):
-            messagebox.showinfo ("ディーラーより",'あなたの勝ちです')
+            messagebox.showinfo ("ディーラーより",'おめでとう！\nあなたの勝ちです')
         if(player_point <= 21 and dealer_point <= 21 and player_point == dealer_point):
             messagebox.showinfo ("ディーラーより",'引き分けです')
         if(player_point <= 21 and dealer_point <= 21 and player_point < dealer_point):
-            messagebox.showinfo ("ディーラーより",'あなたの負けです')
+            messagebox.showinfo ("ディーラーより",'残念でした！\nあなたの負けです')
         return
 
 
