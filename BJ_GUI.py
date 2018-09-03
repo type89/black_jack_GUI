@@ -22,7 +22,11 @@ image_path = os.path.join(base_folder, 'trump', 'png')
 print('image_path ==> ' + image_path)
 
 #カードのリスト取得
-df = pd.read_csv(base_folder + '/card.csv')
+csv_path = os.path.join(base_folder, 'card.csv')
+print('csv_path ==> ' + csv_path)
+
+with open(csv_path, 'r') as f:
+    df = pd.read_csv(f)
 df_i = df.set_index('マーク')
 
 #csv_file = open(os.path.join(base_folder, 'trump_list.csv'), "r", encoding="utf8")
